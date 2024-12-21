@@ -17,7 +17,7 @@ clean:
 	$(RM) $(binaries) $(objects) $(depends)
 
 $(objects): %.o: %.c
-	$(CC) -c $^ $(CFLAGS) -o $@
+	$(CC) -c $< $(CFLAGS) -o $@
 
 $(depends): %.d: %.c
 	$(CC) $^ $(CFLAGS) -MT $(patsubst %.c,%.o,$<) -MM -o $@
